@@ -14,7 +14,6 @@ import com.example.demo.model.SchedulerDetails;
 import com.example.demo.services.SchedulerTaskServices;
 
 @RestController
-@RequestMapping("/demo")
 public class WelcomeController {
 	private static final String WELCOME ="welcome" ;
 	@Autowired
@@ -23,6 +22,11 @@ public class WelcomeController {
 	@GetMapping("/welcome")
 	private String getWelcomeMsg() {
 		return WELCOME;
+	}
+
+	@RequestMapping("/")
+	public String home() {
+		return WELCOME + " Hello Docker World !";
 	}
 
 	@GetMapping("/getTaskDetails")
